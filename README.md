@@ -6,14 +6,14 @@ Users can login/create an account. Allowing them to make a post, comment, like, 
 
 ### WIREFRAMES
 
-Home page
+Home page<br />
 <img src=https://i.imgur.com/mk35yp6.jpg />
 
-User clicked on post
+User clicked on post <br />
 <img src=https://i.imgur.com/6mLxPiC />
 
-User profile
+User profile<br />
 <img src=https://i.imgur.com/9keUQku.jpg />
 
-User went to a specific subreddits home
+User went to a specific subreddits home<br />
 <img src=https://i.imgur.com/8ivWmsF.jpg />
