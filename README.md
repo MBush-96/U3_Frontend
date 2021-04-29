@@ -7,13 +7,13 @@ Users can login/create an account. Allowing them to make a post, comment, like, 
 ### WIREFRAMES
 
 Home page
-<img src=https://i.imgur.com/mk35yp6.jpg>
+<img src=https://i.imgur.com/mk35yp6.jpg />
 
 User clicked on post
-(https://i.imgur.com/6mLxPiC)
+<img src=https://i.imgur.com/6mLxPiC />
 
 User profile
-(https://i.imgur.com/9keUQku.jpg)
+<img src=https://i.imgur.com/9keUQku.jpg />
 
 User went to a specific subreddits home
-(https://i.imgur.com/8ivWmsF.jpg)
+<img src=https://i.imgur.com/8ivWmsF.jpg />
