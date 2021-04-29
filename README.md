@@ -18,6 +18,9 @@ User profile<br />
 User went to a specific subreddits home<br />
 <img src=https://i.imgur.com/8ivWmsF.jpg />
 
+ERD
+<img src=https://i.imgur.com/MvyS4Z6.jpg />
+
 
 ### User Stories
 
