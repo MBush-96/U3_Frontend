@@ -30,3 +30,10 @@ User went to a specific subreddits home<br />
 -I can create and account and login.<br />
 -I can logout.<br />
 -In my profile page I see a list of my previos posts and comments. I can also see my profile stats and change my settings.<br />
+
+### Routes
+
+|Routes|Desc|
+|-------|------|
+|/user/signup|Create user account|
+|/user/login|Login user
