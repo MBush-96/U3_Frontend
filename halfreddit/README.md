@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# U3_Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### OVERVIEW
 
-## Available Scripts
+Users can login/create an account. Allowing them to make a post, comment, like, or dislike a post. Users have a score that keeps track of how many time their posts or comments have been liked. Users can follow different sub rooms (sub reddits) to see posts from those communities in their feed. Otherwise they will receive the basic random feed.
 
-In the project directory, you can run:
+### WIREFRAMES
 
-### `yarn start`
+Home page<br />
+<img src=https://i.imgur.com/mk35yp6.jpg />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+User clicked on post <br />
+<img src=https://i.imgur.com/6mLxPiC.jpg />
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+User profile<br />
+<img src=https://i.imgur.com/9keUQku.jpg />
 
-### `yarn test`
+User went to a specific subreddits home<br />
+<img src=https://i.imgur.com/8ivWmsF.jpg />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ERD
+<img src=https://i.imgur.com/D5mppME.jpg />
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Frontend Heirachy
+<img src=https://i.imgur.com/g2Q9dGO.jpg/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### User Stories
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-When I load the website I see a list of posts as well as a search bar. Aswell as a login/signup button if im logged out, or a profile/logout buttons if im logged in.<br />
+-When I click on a post the post will take up the whole browser screen and display its comments.<br />
+-When I type into the search bar for a sub reddit it and go to its page. All of its post a displayed in the middle with subreddit information on the right side, and make a post on the left.<br />
+-While in a subreddits home I can click the make a post button, and a window popsup for me. Where I can make a post there is a empt box for Title of post, and a empty box for the body of the post.<br />
+-When I submit a post it is added to the subreddits home.<br />
+-I can follow a subreddit and see its feed in my home now no matter if it has very little likes.<br />
+-I can create and account and login.<br />
+-I can logout.<br />
+-In my profile page I see a list of my previos posts and comments. I can also see my profile stats and change my settings.<br />
 
-### `yarn eject`
+### Routes
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+|Routes|Desc|
+|-------|------|
+|/user/signup|Create user account|
+|/user/login|Login user
+|/user/:id|Get user by ID|
+|/user/:id/post|Get user Posts|
+|/user/:id/comment|Get user comments|
+|/r|Get all subreddits|
+|/r/:id|Get subreddit by ID|
+|/post/create|Create new post|
+|/post/:id|Get post by ID|
+|/post/:id/delete|Delete Post|
+|/comment|Create new comment|
+|/comment/:id|Get comment by ID|
+|/comment/:id/delete|Delete Comment|
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### MVP
+-User can create account/login/logout<br />
+-User can make a post on a subreddit home<br />
+-User can see posts on subreddit home or homepage<br />
+-User can leave a comment and see all comments previously made<br />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### STRETCH
+- Karma points system<br />
+- Follow Subreddits and only see their posts in homepage
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
