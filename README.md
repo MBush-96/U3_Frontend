@@ -22,6 +22,9 @@ ERD
 <img src=https://i.imgur.com/MvyS4Z6.jpg />
 
 
+Frontend Heirachy
+<img src=https://i.imgur.com/g2Q9dGO.jpg/>
+
 ### User Stories
 
 -When I load the website I see a list of posts as well as a search bar. Aswell as a login/signup button if im logged out, or a profile/logout buttons if im logged in.<br />
@@ -61,3 +64,5 @@ ERD
 ### STRETCH
 - Karma points system<br />
 - Follow Subreddits and only see their posts in homepage
+
+
