@@ -51,3 +51,13 @@ ERD
 |/comment|Create new comment|
 |/comment/:id|Get comment by ID|
 |/comment/:id/delete|Delete Comment|
+
+### MVP
+-User can create account/login/logout<br />
+-User can make a post on a subreddit home<br />
+-User can see posts on subreddit home or homepage<br />
+-User can leave a comment and see all comments previously made<br />
+
+### STRETCH
+- Karma points system<br />
+- Follow Subreddits and only see their posts in homepage
