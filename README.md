@@ -37,3 +37,13 @@ User went to a specific subreddits home<br />
 |-------|------|
 |/user/signup|Create user account|
 |/user/login|Login user
+|/user/:id|Get user by ID|
+|/user/:id/post|Get user Posts|
+|/user/:id/comment|Get user comments|
+|/r|Get all subreddits|
+|/r/:id|Get subreddit by ID|
+|/post/create|Create new post|
+|/post/:id|Get post by ID|
+|/post/:id/delete|Delete Post|
+|/comment|Create new comment|
+|/comment/:id|Get comment by ID|
