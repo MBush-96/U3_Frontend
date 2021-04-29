@@ -47,3 +47,4 @@ User went to a specific subreddits home<br />
 |/post/:id/delete|Delete Post|
 |/comment|Create new comment|
 |/comment/:id|Get comment by ID|
+|/comment/:id/delete|Delete Comment|
