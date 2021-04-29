@@ -17,3 +17,16 @@ User profile<br />
 
 User went to a specific subreddits home<br />
 <img src=https://i.imgur.com/8ivWmsF.jpg />
+
+
+### User Stories
+
+-When I load the website I see a list of posts as well as a search bar. Aswell as a login/signup button if im logged out, or a profile/logout buttons if im logged in.
+-When I click on a post the post will take up the whole browser screen and display its comments.
+-When I type into the search bar for a sub reddit it and go to its page. All of its post a displayed in the middle with subreddit information on the right side, and make a post on the left.
+-While in a subreddits home I can click the make a post button, and a window popsup for me. Where I can make a post there is a empt box for Title of post, and a empty box for the body of the post.
+-When I submit a post it is added to the subreddits home
+-I can follow a subreddit and see its feed in my home now no matter if it has very little likes.
+-I can create and account and login
+-I can logout
+-In my profile page I see a list of my previos posts and comments. I can also see my profile stats and change my settings.
