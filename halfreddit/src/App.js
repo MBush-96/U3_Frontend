@@ -6,24 +6,29 @@ import Login from './pages/login'
 import Signup from './pages/signup'
 import SearchBar from './components/searchbar'
 import Profile from './pages/profile'
+import PostPage from './pages/postpage';
 import CreateSub from './pages/createSub'
 import { Route } from 'react-router-dom'
-import {useState} from 'react'
+import { useEffect, useState } from 'react'
 import SubReddit from './pages/subRedditPage';
+import axios from 'axios';
 
 function App() {
   // const {globaluserState, fetchUser} = useContext(UserContext)
   // const [user, setUser] = globaluserState
-  const [search, setSearch] = useState('')
+  const [loggedIn, setLoggedIn] = useState(false)
 
   return (
     <div className="App">
-      <Header />
-      
+      <Header 
+        loggedIn={loggedIn}
+        setLoggedIn={setLoggedIn}
+      />
+{/* 
       <SearchBar 
         search={search}
         setSearch={setSearch}
-      />
+      /> */}
 
       <Route
         path='/'
@@ -45,7 +50,10 @@ function App() {
         path='/login'
         exact
         render={() => 
-          <Login />
+          <Login 
+            loggedIn={loggedIn}
+            setLoggedIn={setLoggedIn}
+          />
         }
       />
 
@@ -70,6 +78,14 @@ function App() {
         exact
         render={routingProps => (
           <SubReddit routingProps={routingProps.match.params.subname} />
+        )}
+      />
+
+      <Route
+        path='/sr/post/:postId'
+        exact
+        render={routingProps => (
+          <PostPage />
         )}
       />
     </div>

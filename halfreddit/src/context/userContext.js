@@ -15,6 +15,7 @@ const UserProvider = ({children}) => {
             axios.get(`http://localhost:3001/user/${userId}`)
             .then(res => {
                 setUser(res.data.user)
+                console.log(res);
             })
         }
     }

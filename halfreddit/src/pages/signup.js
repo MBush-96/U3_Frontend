@@ -11,6 +11,7 @@ const Signup = props => {
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [profileImage, setProfileImage] = useState()
     const history = useHistory()
 
     // console.log(globaluserState);
@@ -20,7 +21,9 @@ const Signup = props => {
         const res = await axios.post(`http://localhost:3001/user/signup`, {   
             username: username,
             email: email,
-            password: password
+            password: password,
+            karma: 0,
+            profileimage: profileImage ? profileImage : 'https://i.imgur.com/4D1M140.png'
         })
         setUsername('')
         setEmail('')
@@ -46,6 +49,9 @@ const Signup = props => {
                 </div>
                 <div>
                     <input type='password' value={password} onChange={e => setPassword(e.target.value)} placeholder='Password' required />
+               </div>
+               <div>
+                   <input type='text' value={profileImage} onChange={e=> setProfileImage(e.target.value)} placeholder='Profile Image Url' />
                </div>
                     <input type='submit' value='Sign-up!' />
             </form>

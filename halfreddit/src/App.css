@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #6883bc;
 }
 
 .App-logo {
@@ -37,48 +38,97 @@
   }
 }
 
+.singlePostLink:active {
+  color: black;
+}
+
 
 .postTextArea {
   margin-top: 10px;
   resize: none;
 }
 
+.singlePostLink:visited {
+  color: gray;
+} 
+
+.singlePostLink {
+  color: black;
+}
+
 .singleSubPost {
-  border: 4px solid black;
-  width: 50%;
+  border: 4px solid whitesmoke;
+  width: 600px;
+  text-decoration: none;
+  margin: 20px auto;
+  background-color: #FFFFF0;
+  display: flex;
+}
+
+.voteArrow {
+  width: 20px;
+  height: 20px;
+}
+
+.voteArrow:hover {
+  cursor: pointer;
+}
+
+.postVotes {
+  padding: 5px;
+  margin: 0px 15px 0px 2px;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid black;
+}
+
+.singlePostTitle {
+  text-align: left;
+}
+
+.singlePostInfo {
+  margin: 0;
+  text-align: left;
+}
+
+.singlePostLink {
+  text-decoration: none;
 }
 
 .subPostsContainer {
-  border: 1px solid green;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .headerLinks {
-  background: blue;
+  background: #8a307f;
   font-size: 20px;
   text-decoration: none;
   color: white;
   padding: 5px;
   border-radius: 15%;
+  margin: 20px;
 }
 
 .headerContainer {
   display: flex;
-  border: 5px solid lightcoral;
-  height: 150px;
+  background-color: #79a7d3;
+  height: 50px;
   margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .navContainer {
-  width: 50%;
+  width: 33%;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logoHeader {
-  width: 50%;
-  background-color: lightcoral;
+  width: 33%;
 }
 
 .navContentContainer {
@@ -88,9 +138,10 @@
 
 .navContent {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
   width: 100%;
+  margin: 30px;
 }
 
 .searchBarContainer {
@@ -98,11 +149,40 @@
 }
 
 .searchBar {
-  width: 25%;
+  width: 50%;
   height: 25px;
   margin-bottom: 25px;
 }
 
 .searchBarBtn {
   height: 31px;
+}
+
+.profileContainer {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  margin: 0 55px;
+}
+
+.profileInfoPanel {
+  width: 20%;
+  border: 2px solid red;
+  background-color: whitesmoke;
+  border-radius: 15%;
+}
+
+.ph {
+  width: 80%;
+  border: 2px solid green;
+}
+
+.userProfileImg {
+  margin-top: 20px;
+  width: 40%;
+  border-radius: 50%;
+}
+
+.likedCount {
+  margin: 2px;
 }

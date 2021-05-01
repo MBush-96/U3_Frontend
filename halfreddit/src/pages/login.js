@@ -10,7 +10,7 @@ const Login = props => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const history = useHistory()
-    
+
     const handleLogin = e => {
         e.preventDefault()
         axios.post(`http://localhost:3001/user/login`, {
@@ -21,8 +21,9 @@ const Login = props => {
                 console.log(res.data.error);
             } else {
                 console.log(res);
-                localStorage.setItem('userId', res.data.user.id)
-                fetchUser(res.data.user.id)
+                localStorage.setItem('userId', res.data.id)
+                fetchUser(res.data.id)
+                props.setLoggedIn(true)
                 history.push('/')
             }
         })

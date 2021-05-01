@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const Nav = () => {
+const Nav = props => {
     // Deconstructs object for user/setUser
     // const {globaluserState} = useContext(UserContext)
     // const [user, setUser] = globaluserState
@@ -14,6 +14,7 @@ const Nav = () => {
                         <Link to='/profile' className='headerLinks'>Profile</Link>
                         <Link to='/' className='headerLinks' onClick={() => {
                             localStorage.removeItem('userId')
+                            props.setLoggedIn(false)
                         }}>Logout</Link>           
                     </>
                 :
