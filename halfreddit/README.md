@@ -19,7 +19,7 @@ User went to a specific subreddits home<br />
 <img src=https://i.imgur.com/8ivWmsF.jpg />
 
 ERD
-<img src=https://i.imgur.com/D5mppME.jpg />
+<img src=https://i.imgur.com/0mGX6yY.jpg />
 
 
 Frontend Heirachy

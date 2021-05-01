@@ -36,3 +36,73 @@
     transform: rotate(360deg);
   }
 }
+
+
+.postTextArea {
+  margin-top: 10px;
+  resize: none;
+}
+
+.singleSubPost {
+  border: 4px solid black;
+  width: 50%;
+}
+
+.subPostsContainer {
+  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerLinks {
+  background: blue;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  border-radius: 15%;
+}
+
+.headerContainer {
+  display: flex;
+  border: 5px solid lightcoral;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+.navContainer {
+  width: 50%;
+  display: flex;
+}
+
+.logoHeader {
+  width: 50%;
+  background-color: lightcoral;
+}
+
+.navContentContainer {
+  width: 100%;
+  display: flex;
+}
+
+.navContent {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.searchBarContainer {
+  width: 100%;
+}
+
+.searchBar {
+  width: 25%;
+  height: 25px;
+  margin-bottom: 25px;
+}
+
+.searchBarBtn {
+  height: 31px;
+}

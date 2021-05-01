@@ -1,24 +1,29 @@
 import './App.css';
 
-import Nav from './components/nav'
+import Header from './components/header'
 import Home from './pages/home'
-import { Route } from 'react-router-dom'
-import Signup from './pages/signup'
-import {useState} from 'react'
 import Login from './pages/login'
-import { useContext } from 'react/cjs/react.development';
-import { UserContext } from './context/userContext';
+import Signup from './pages/signup'
+import SearchBar from './components/searchbar'
+import Profile from './pages/profile'
+import CreateSub from './pages/createSub'
+import { Route } from 'react-router-dom'
+import {useState} from 'react'
+import SubReddit from './pages/subRedditPage';
 
 function App() {
   // const {globaluserState, fetchUser} = useContext(UserContext)
   // const [user, setUser] = globaluserState
-  const [username, setUsername] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [search, setSearch] = useState('')
 
   return (
     <div className="App">
-      <Nav />
+      <Header />
+      
+      <SearchBar 
+        search={search}
+        setSearch={setSearch}
+      />
 
       <Route
         path='/'
@@ -32,14 +37,7 @@ function App() {
         path='/signup'
         exact
         render={() => 
-          <Signup 
-            username={username}
-            setUsername={setUsername}
-            email={email}
-            setEmail={setEmail}
-            password={password}
-            setPassword={setPassword}
-          />
+          <Signup />
         }
       />
 
@@ -47,13 +45,32 @@ function App() {
         path='/login'
         exact
         render={() => 
-          <Login 
-            email={email}
-            setEmail={setEmail}
-            password={password}
-            setPassword={setPassword}
-          />
+          <Login />
         }
+      />
+
+      <Route 
+        path='/profile'
+        exact
+        render={() =>
+          <Profile />
+        }
+      />
+
+      <Route
+        path='/new/create'
+        exact
+        render={() =>
+          <CreateSub />
+        }
+      />
+
+      <Route
+        path='/sr/:subname'
+        exact
+        render={routingProps => (
+          <SubReddit routingProps={routingProps.match.params.subname} />
+        )}
       />
     </div>
   );

@@ -1,22 +1,18 @@
 import {useState, createContext} from 'react'
 import axios from 'axios'
-import env from 'react'
 
 const UserContext = createContext()
 
 const UserProvider = ({children}) => {
-    const [user, setUser] = useState({})
+    // adding the keys to the end will allow for objects
+    const [user, setUser] = useState({username: '', email: ''})
 
     
     // fetch the user using local storage
-    const fetchUser = () => {
-        const userId = localStorage.getItem('userId')
+    const fetchUser = (id=null) => {
+        const userId = id ? id : localStorage.getItem('userId')
         if(userId) {
-            axios.get(`${process.env.REACT_APP_URL}/user/${userId}`, {
-                headers: {
-                    Authorization: userId
-                }
-            })
+            axios.get(`http://localhost:3001/user/${userId}`)
             .then(res => {
                 setUser(res.data.user)
             })
