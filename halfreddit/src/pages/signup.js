@@ -18,7 +18,7 @@ const Signup = props => {
     const handleSubmit = async e => {
         e.preventDefault()
         // console.log(process.env.REACT_APP_URL)
-        const res = await axios.post(`http://localhost:3001/user/signup`, {   
+        const res = await axios.post(`${process.env.REACT_APP_URL}/user/signup`, {   
             username: username,
             email: email,
             password: password,

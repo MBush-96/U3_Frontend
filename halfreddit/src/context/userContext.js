@@ -12,7 +12,7 @@ const UserProvider = ({children}) => {
     const fetchUser = (id=null) => {
         const userId = id ? id : localStorage.getItem('userId')
         if(userId) {
-            axios.get(`http://localhost:3001/user/${userId}`)
+            axios.get(`${process.env.REACT_APP_URL}/user/${userId}`)
             .then(res => {
                 setUser(res.data.user)
                 console.log(res);

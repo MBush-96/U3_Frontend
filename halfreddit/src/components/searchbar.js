@@ -4,18 +4,17 @@ import { useEffect, useState } from 'react';
 
 const SearchBar = props => {
     const history = useHistory()
-    const [allSubReddits, setAllSubReddits] = useState([])
 
     // used for search suggestions 
     const getAllSubs = () => {
-      axios.get(`http://localhost:3001/subreddit/all`).then(res => {
-        setAllSubReddits(res.data.subs)
+      axios.get(`${process.env.REACT_APP_URL}/subreddit/all`).then(res => {
+        props.setAllSubReddits(res.data.subs)
       })
     }
 
     const handleSubmit = e => {
         e.preventDefault();
-        axios.get(`http://localhost:3001/subreddit/sr/${props.search}`).then(res => {
+        axios.get(`${process.env.REACT_APP_URL}/subreddit/sr/${props.search}`).then(res => {
             if(res.data.sub === null) {
                 alert('no page')
                 props.setSearch('')

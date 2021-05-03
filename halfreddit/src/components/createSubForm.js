@@ -6,7 +6,7 @@ const CreateSubForm = props => {
     
     const handleSubmit = e => {
         e.preventDefault()
-        axios.post(`http://localhost:3001/subreddit/create`, {
+        axios.post(`${process.env.REACT_APP_URL}/subreddit/create`, {
             name: subName
         })
         setSubName('')

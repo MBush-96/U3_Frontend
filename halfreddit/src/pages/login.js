@@ -13,7 +13,7 @@ const Login = props => {
 
     const handleLogin = e => {
         e.preventDefault()
-        axios.post(`http://localhost:3001/user/login`, {
+        axios.post(`${process.env.REACT_APP_URL}/user/login`, {
             email: email,
             password: password
         }).then(res => {

@@ -1,34 +1,51 @@
 import CreateSubForm from '../components/createSubForm'
-import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useContext } from 'react/cjs/react.development'
 import { UserContext } from '../context/userContext'
+import axios from 'axios'
+
 const Profile = () => {
     const {globaluserState, fetchUser} = useContext(UserContext)
     const [user, setUser] = globaluserState
-    const [showSubForm, setShowSubForm] = useState(false)
+    const [userPosts, setUserPosts] = useState([])
+
+    const getAllUserPosts = async () => {
+        const res = await axios.post(`${process.env.REACT_APP_URL}/user/posts`, {
+            userId: parseInt(localStorage.getItem('userId'))
+        })
+        setUserPosts(res.data.post)
+    }
 
     useEffect(() => {
         fetchUser(localStorage.getItem('userId'))
+        getAllUserPosts()
     }, [])
 
-    console.log(user);
-
     return(
-        <div className='profileContainer'>
-            <div className='ph'>
-                <h1>Hi</h1>
+        <div className='sd'>
+            <div className='idk'>
+                
             </div>
-            <div className='profileInfoPanel'>
-                {showSubForm ? <CreateSubForm /> : null}
-                <button onClick={() =>
-                    showSubForm ? setShowSubForm(false) : setShowSubForm(true)}
-                    >Create a subreddit
-                </button>
-                <div className='userInfoPanel'>
-                    <img className='userProfileImg' src={user.profileimage}></img>
-                    <p>{user.username}</p>
-                    <p>Karma: {user.karma}</p>
+            <div className='profileContainer'>
+                <div className='profileActivityContainer'>
+                    {userPosts.map((post, i) => (
+                        <div className='profileActivity'>
+                            <div>
+                                <h1>{post.title}</h1>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <div className='profileInfoPanel'>
+                    <div className='userInfoPanel'>
+                        <img className='userProfileImg' src={user.profileimage}></img>
+                        <p>{user.username}</p>
+                        <p>Karma: {user.karma}</p>
+                    </div>
+                    <Link to='/create/subreddit' className='createSRBtn'>
+                        Create a subreddit
+                    </Link>
                 </div>
             </div>
         </div>

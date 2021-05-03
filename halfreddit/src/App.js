@@ -4,37 +4,44 @@ import Header from './components/header'
 import Home from './pages/home'
 import Login from './pages/login'
 import Signup from './pages/signup'
-import SearchBar from './components/searchbar'
 import Profile from './pages/profile'
 import PostPage from './pages/postpage';
 import CreateSub from './pages/createSub'
 import { Route } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 import SubReddit from './pages/subRedditPage';
-import axios from 'axios';
+import CreateSubReddit from './pages/createSubReddit'
+import axios from 'axios'
 
 function App() {
-  // const {globaluserState, fetchUser} = useContext(UserContext)
-  // const [user, setUser] = globaluserState
   const [loggedIn, setLoggedIn] = useState(false)
+  const [allSubReddits, setAllSubReddits] = useState([])
+
+  const allSubs = () => {
+    axios.get(`${process.env.REACT_APP_URL}/subreddit/all`).then(res => {
+      setAllSubReddits(res.data.subs)
+    })
+  }
+
+  useEffect(allSubs, [])
+
 
   return (
     <div className="App">
       <Header 
         loggedIn={loggedIn}
         setLoggedIn={setLoggedIn}
+        allSubReddits={allSubReddits}
+        setAllSubReddits={setAllSubReddits}
       />
-{/* 
-      <SearchBar 
-        search={search}
-        setSearch={setSearch}
-      /> */}
 
       <Route
         path='/'
         exact
         render={() => 
-          <Home />
+          <Home 
+            allSubReddits={allSubReddits}
+          />
         }
       />
 
@@ -86,6 +93,14 @@ function App() {
         exact
         render={routingProps => (
           <PostPage />
+        )}
+      />
+
+      <Route
+        path='/create/subreddit'
+        exact
+        render={() => (
+          <CreateSubReddit />
         )}
       />
     </div>
