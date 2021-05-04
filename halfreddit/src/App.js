@@ -12,10 +12,12 @@ import { useState, useEffect } from 'react'
 import SubReddit from './pages/subRedditPage';
 import CreateSubReddit from './pages/createSubReddit'
 import axios from 'axios'
+import CreatePostForm from './components/createPostForm'
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false)
   const [allSubReddits, setAllSubReddits] = useState([])
+  const [allUsers, setAllUsers] = useState([])
 
   const allSubs = () => {
     axios.get(`${process.env.REACT_APP_URL}/subreddit/all`).then(res => {
@@ -23,7 +25,14 @@ function App() {
     })
   }
 
+  const getAllUsers = () => {
+    axios.get(`${process.env.REACT_APP_URL}/user/all/u`).then(res => {
+      setAllUsers(res.data.users)
+    })
+  }
+
   useEffect(allSubs, [])
+  useEffect(getAllUsers, [])
 
 
   return (
@@ -92,7 +101,10 @@ function App() {
         path='/sr/post/:postId'
         exact
         render={routingProps => (
-          <PostPage />
+          <PostPage 
+            routingProps={routingProps.match.params} 
+            allUsers={allUsers}
+          />
         )}
       />
 
@@ -101,6 +113,14 @@ function App() {
         exact
         render={() => (
           <CreateSubReddit />
+        )}
+      />
+
+      <Route
+        path='/create/post/:subname'
+        exact
+        render={routingProps => (
+          <CreatePostForm routingProps={routingProps.match.params.subname} />
         )}
       />
     </div>

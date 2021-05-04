@@ -40,6 +40,9 @@ const Signup = props => {
     
     return(
         <div>
+            <div className='idk'>
+                
+            </div>
             <form className='signupForm' onSubmit={handleSubmit}>
                 <div>
                     <input type='text' value={username} onChange={e => setUsername(e.target.value)} placeholder='Username' required />

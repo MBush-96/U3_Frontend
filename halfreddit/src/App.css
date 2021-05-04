@@ -27,6 +27,14 @@
   resize: none;
 }
 
+.postTextArea:focus {
+  outline: none;
+}
+
+.postTitleInput:focus {
+  outline: none;
+}
+
 .singlePostLink:visited {
   color: gray;
 } 
@@ -78,6 +86,21 @@
 
 .singlePostBody {
   text-align: left;
+}
+
+.postBottomComment {
+  display: flex;
+}
+
+.pCommentBtn {
+  margin-bottom: 0px;
+  color: #a200ff;
+  font-weight: bold;
+  font-size: small;
+}
+
+.pCommentBtn:hover {
+  cursor: pointer;
 }
 
 .subPostsContainer {
@@ -241,7 +264,49 @@
 }
 
 .subRedditInfo {
-  width: 33%;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 20%;
+  background-color: white;
+  height: 300px;
+  border-radius: 5%;
+  box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.postCommentContainer {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.postCommentPost {
+  width: 40%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, .5);
+}
+
+.createNewPost {
+  margin-top: 10px;
+  text-decoration: none;
+  border: 1px solid #a200ff;
+  padding: 0 10px;
+  color: black;
+  font-weight: bold;
+}
+
+.createNewPost:hover {
+  border: 1px solid black;
+  color: white;
+  background-color: #a200ff;
 }
 
 .subHeader {
@@ -356,4 +421,86 @@
 
 .idk {
   height: 50px;
+}
+
+.postFormContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.postFormSubmitBtn {
+  margin-top: 10px;
+  width: 10%;
+  background-color: white;
+  color: black;
+  border: 2px solid #a200ff;
+}
+
+.postFormSubmitBtn:hover {
+  cursor: pointer;
+  background-color: #a200ff;
+  color: white;
+}
+
+#postForm {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+#commentForm {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.commentTextArea {
+  resize: none;
+}
+
+.commentFormBtn {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  width: 20%;
+  border: 1px solid #a200ff;
+}
+
+.commentFormBtn:hover {
+  cursor: pointer;
+  background-color: #a200ff;
+  color: white;
+  border: 1px solid black;
+}
+
+.comments {
+  background-color: whitesmoke;
+  width: 40%;
+}
+
+.singleComment {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #a200ff;
+  margin-top: 10px;
+  align-items: flex-start;
+}
+
+.commentBody {
+  margin: 20px 20px 5px 45px;
+}
+
+.commentHead {
+  display: flex;
+}
+
+.commentHeadImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.commentUsername {
+  margin-bottom: 0px;
 }
