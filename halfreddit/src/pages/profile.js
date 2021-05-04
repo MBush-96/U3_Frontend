@@ -30,7 +30,7 @@ const Profile = () => {
             <div className='profileContainer'>
                 <div className='profileActivityContainer'>
                     {userPosts.map((post, i) => (
-                        <div className='profileActivity'>
+                        <div className='profileActivity' key={i}>
                             <div>
                                 <h1>{post.title}</h1>
                             </div>

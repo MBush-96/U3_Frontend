@@ -18,17 +18,17 @@ const SubReddit = props => {
             subredditId: parseInt(id)
         }).then(res => {
             setAllPosts(res.data.posts)
-            console.log('getposts');
-            console.log(subId);
         })
     }
     
     const addLike = async post => {
-        console.log(post.id);
         const res = await axios.put(`${process.env.REACT_APP_URL}/post/liked`, {
             postId: post.id
         })
+        console.log(res);
         getPosts(subId)
+        const user = await axios.put(`${process.env.REACT_APP_URL}/user/${res.data.post.userId}`)
+        console.log(user);
     }
     
     const dislikePost = async post => {
@@ -37,6 +37,10 @@ const SubReddit = props => {
         })
         console.log(res);
         getPosts(subId)
+        const user = await axios.put(`${process.env.REACT_APP_URL}/user/${res.data.post.userId}`, {
+            fork: 'dislike'
+        })
+        console.log(user);
     }
     
     useEffect(async () => {
@@ -46,7 +50,6 @@ const SubReddit = props => {
         if(res) {
             getPosts(res.data.sub.id)
         }
-        console.log('h');
     }, [])
 
     return(

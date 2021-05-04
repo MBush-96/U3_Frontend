@@ -7,7 +7,6 @@ const UsernameComment = props => {
 
     const handleUsernameGrab = () => {
         axios.get(`${process.env.REACT_APP_URL}/user/${props.userId}`).then(res => {
-            console.log(res)
             setUsername(res.data.user.username)
             setUserImage(res.data.user.profileimage)
         })
@@ -18,7 +17,7 @@ const UsernameComment = props => {
     return(
         <div className='commentHead'>
             <img className='commentHeadImg' src={userImage} />
-            <p className='commentUsername'>{username}</p>
+            <p style={{marginBottom: 0}}>{username}</p>
         </div>
     )
 }

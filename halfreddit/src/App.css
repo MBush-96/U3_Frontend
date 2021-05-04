@@ -178,7 +178,6 @@
 }
 
 .profileContainer {
-  border: 2px solid black;
   display: flex;
   flex-direction: row;
   margin: 0 55px;
@@ -187,7 +186,7 @@
 
 .profileInfoPanel {
   width: 20%;
-  border: 2px solid red;
+  box-shadow: 0px 0px 5px 5px rgba(162, 0, 255, .5);
   background-color: whitesmoke;
   border-radius: 15%;
   height: 400px;
@@ -235,14 +234,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid red;
   width: 50%;
   background-color: white;
   margin-bottom: 15px;
 }
 
 .profileActivityContainer {
-  border: 1px solid green;
   display: flex;
   align-items: center;
   justify-content: center;
